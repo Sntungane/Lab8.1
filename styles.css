@@ -1,0 +1,38 @@
+/* Basic layout */
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{margin:0;background:#f5f7fb;color:#0f1724}
+.app-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:#fff;border-bottom:1px solid #e6e9ef}
+.brand{margin:0;font-size:1.25rem}
+.app-shell{display:flex;gap:1rem;padding:1rem}
+.sidebar{width:200px}
+.deck-list{list-style:none;padding:0;margin:0}
+.deck-list li{padding:.5rem .6rem;border-radius:6px;cursor:pointer}
+.deck-list li:hover{background:#eef3ff}
+.main{flex:1}
+.deck-header{margin-bottom:1rem}
+.toolbar{display:flex;gap:.5rem;align-items:center;margin-top:.5rem}
+.btn{padding:.4rem .7rem;border-radius:6px;border:1px solid #d1d5db;background:#fff;cursor:pointer}
+.btn-primary{background:#2563eb;color:#fff;border-color:#2563eb}
+.btn-danger{background:#ef4444;color:#fff;border-color:#ef4444}
+
+/* Cards grid */
+.cards-section{padding:1rem 0}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;perspective:1200px}
+
+/* Card and 3D flip styles */
+.card{width:100%;height:160px;position:relative;cursor:pointer}
+.card-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,36,0.08);overflow:hidden}
+.card.is-flipped .card-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:1rem;backface-visibility:hidden;background:#fff}
+.card-front{font-weight:600}
+.card-back{transform:rotateY(180deg);background:#f8fafc;color:#111}
+
+.card-controls{position:absolute;top:8px;right:8px;display:flex;gap:6px}
+.card-controls button{padding:4px 6px;font-size:12px;border-radius:6px}
+
+/* Small responsiveness */
+@media (max-width:520px){.card-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+
+/* Utilities */
+.empty-state{padding:1rem;background:#fff;border-radius:8px}
+

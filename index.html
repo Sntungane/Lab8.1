@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header class="app-header">
+      <h1 class="brand">Flashcards</h1>
+      <button id="newDeckBtn" class="btn btn-primary">New Deck</button>
+    </header>
+
+    <div class="app-shell">
+      <aside class="sidebar">
+        <h2 class="sidebar-title">Decks</h2>
+        <ul id="deckList" class="deck-list"></ul>
+
+        <div id="deckEmptyState" class="empty-state" hidden>
+          <p><strong>No decks yet.</strong></p>
+          <p>Click “New Deck” to create one.</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="deck-header">
+          <div class="deck-title-row">
+            <h2 id="activeDeckTitle">No deck selected</h2>
+
+            <div class="deck-title-actions">
+              <button id="editDeckBtn" class="btn" disabled>Edit</button>
+              <button id="deleteDeckBtn" class="btn btn-danger" disabled>Delete</button>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search cards..."
+              disabled
+              aria-label="Search cards"
+            />
+
+            <button id="shuffleBtn" class="btn" disabled>Shuffle</button>
+            <button id="newCardBtn" class="btn btn-primary" disabled>New Card</button>
+          </div>
+        </section>
+
+        <section class="cards-section">
+          <div id="cardGrid" class="card-grid" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
